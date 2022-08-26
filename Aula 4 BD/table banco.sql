@@ -19,9 +19,12 @@
 --INSERT INTO agencia (numero_banco,numero_agencia, nome_banco) VALUES (99992,456,'CAIXA');
 --INSERT INTO agencia (numero_banco,numero_agencia, nome_banco) VALUES (88848,789,'SANTANDER');
 
---SELECT * FROM agencia WHERE nome_banco LIKE 'B%';
-
-SELECT * FROM agencia  ORDER BY numero_banco DESC LIMIT 3 ;
+--SELECT * FROM agencia WHERE nome_banco iLIKE 'B%';
+--SELECT * FROM agencia WHERE nome_banco ='CAIXA';
+--SELECT * FROM conta WHERE saldo in (8889,8890);
+SELECT c.titular,c.saldo,c.numero_conta, a.nome_banco FROM conta AS c, agencia AS a
+WHERE c.numero_banco = a.numero_banco ORDER BY a.nome_banco DESC;
+--SELECT * FROM agencia  ORDER BY numero_banco DESC LIMIT 3 ;
 
 --DROP TABLE agencia;
 
